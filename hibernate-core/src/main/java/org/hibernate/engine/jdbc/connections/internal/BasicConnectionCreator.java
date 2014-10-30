@@ -58,6 +58,8 @@ public abstract class BasicConnectionCreator implements ConnectionCreator {
 			Properties connectionProps,
 			boolean autocommit,
 			Integer isolation) {
+		if(serviceRegistry == null)
+			throw new NullPointerException("serviceRegistry==null");
 		this.serviceRegistry = serviceRegistry;
 		this.url = url;
 		this.connectionProps = connectionProps;
